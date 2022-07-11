@@ -1,0 +1,9 @@
+@import '../../styles/settings.scss';
+
+.pageTitle {
+    font-family: $font-title;
+    color: $color-dark;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 102%;
+}
