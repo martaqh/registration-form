@@ -1,0 +1,16 @@
+@import '../../styles/settings.scss';
+
+.validationMessage {
+    font-family: $font-form;
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-dark;
+    letter-spacing: 0.04em;
+    margin: 0;
+    padding: 0;
+
+    p {
+        margin: 0;
+    padding: 0;
+    }
+}
