@@ -1,0 +1,33 @@
+@import '../../styles/settings.scss';
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-family: $font-main;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        color: $color-label;
+        margin: 12px 0;
+    }
+
+    input {
+        align-items: center;
+        padding: 24px;
+        gap: 10px;
+        width: 472px;
+        height: 56px;
+        border-radius: 8px;
+        background-color: $color-input-background;
+        border: none;
+
+        ::placeholder {
+            font-family: $font-form;
+            font-size: 18px;
+        }
+    }
+
+}
