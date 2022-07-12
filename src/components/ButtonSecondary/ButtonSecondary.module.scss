@@ -1,0 +1,15 @@
+@import '../../styles/settings.scss';
+
+.buttonSecondary {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    width: 228px;
+    background: inherit;
+    border-radius: 64px;
+    color: $color-brand;
+    font-family: $font-main;
+}
