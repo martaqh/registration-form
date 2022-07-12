@@ -1,0 +1,32 @@
+@import '../../styles/settings.scss';
+
+.buttonPrimary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    width: 228px;
+    background: $color-brand;
+    border-radius: 64px;
+    text-decoration: none;
+    color: $color-reverse;
+    font-family: $font-main;
+
+    &[type="single"] {
+        
+        margin: 48px auto;
+    }
+
+    &:hover {
+        background: $color-action;
+        cursor: pointer;
+    }
+    
+    &:active {
+        border: 5px solid $color-label;
+    }
+
+    
+    
+}
+
