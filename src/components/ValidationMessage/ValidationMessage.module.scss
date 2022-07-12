@@ -6,11 +6,21 @@
     font-size: 14px;
     color: $color-dark;
     letter-spacing: 0.04em;
-    margin: 0;
-    padding: 0;
+    line-height: 170%;
+
+    .valid {
+        color: $color-success;
+    }
 
     p {
         margin: 0;
-    padding: 0;
+        padding: 0; 
     }
+
+    
+    
+    
 }
+
+
+
