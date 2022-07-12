@@ -15,17 +15,45 @@
     }
 
     input {
-        align-items: center;
-        padding: 24px;
-        gap: 10px;
+        
+        margin-bottom: 8px;
         border-radius: 8px;
-        background-color: $color-input-background;
+        background-color: $color-input;
         border: none;
+        height: 56px;
+        text-indent:24px;
+        
 
-        ::placeholder {
+        &::placeholder {
             font-family: $font-form;
-            font-size: 18px;
+            font-size: 16px; 
         }
+
+        &:placeholder-shown {
+            text-overflow: ellipsis;
+        }
+    
+        &:hover {
+            background-color: $color-input-hover;
+        }
+    
+        &:focus {
+            background: $color-input-active;
+            border: 1px solid $color-input-border-active;
+        }
+
+        &[type="date"]{
+            text-indent: 0px;
+            padding: 0 24px;
+            font-family: $font-form;
+        }
+
+        
     }
+
+
+
+    
+    
 
 }
