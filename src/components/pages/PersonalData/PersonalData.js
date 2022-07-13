@@ -11,11 +11,15 @@ import { addUserData } from '../../../redux/userDataRedux';
 import { useNavigate } from 'react-router';
 import PrivacyPolicyCheck from "../../PrivacyPolicyCheck/PrivacyPolicyCheck";
 
-const RegistrationPersonalData = () => {
+const PersonalData = () => {
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [birthDate, setBirthDate] = useState()
+    const [birthDate, setBirthDate] = useState();
+    const [noFisrtName, setNoFisrName] = useState(false);
+    const [noLastName, setNoLastName] = useState(false);
+    const [noBirthDate, setNoBirthDate] = useState(false);
+    const [isAccepted, setIsAccepted] = useState(false);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -26,6 +30,7 @@ const RegistrationPersonalData = () => {
         firstName: firstName,
         lastName: lastName,
         birthDate: birthDate,
+        privacyPolicyAccepted: isAccepted,
     }
 
     const dateOfBirth = new Date(birthDate);
@@ -38,11 +43,25 @@ const RegistrationPersonalData = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addUserData(userPersonalData));
-        setFirstName('');
-        setLastName('');
-        navigate("/success");
-        
+        if (firstName.length <=0) {
+            setNoFisrName(true);
+            console.log(noFisrtName);
+        } else if (lastName.length <=0) {
+            setNoLastName(true);
+            console.log(noLastName);
+        } else if (birthDate === undefined) {
+            setNoBirthDate(true);
+            console.log(noBirthDate);
+        } else if (isAccepted === false) {
+            alert("Please accept our Privacy Policy")
+        } else {
+
+            dispatch(addUserData(userPersonalData));
+            setFirstName('');
+            setLastName('');
+            setBirthDate();
+            navigate("/success");
+        }
     }
     return (
         <main>
@@ -54,6 +73,7 @@ const RegistrationPersonalData = () => {
                         label="First name"
                         type="text"
                         placeholder="e.g. Jessica"
+                        className={noFisrtName ? "notValid" : null}
                         value={firstName}
                         onChange={e => setFirstName(e.target.value)}
                     />
@@ -61,6 +81,7 @@ const RegistrationPersonalData = () => {
                         label="Last name"
                         type="text"
                         placeholder="e.g. Walton"
+                        className={noLastName ? "notValid" : null}
                         value={lastName}
                         onChange={e => setLastName(e.target.value)}
                     />
@@ -68,6 +89,7 @@ const RegistrationPersonalData = () => {
                         label="Date of birth"
                         type="date"
                         placeholder="DD/MM/YYYY"
+                        className={noBirthDate ? "notValid" : null}
                         value={birthDate}
                         onChange={e => setBirthDate(e.target.value)}
                     ></InputField>
@@ -76,7 +98,7 @@ const RegistrationPersonalData = () => {
                     >
                         You should be minimum 18 years old
                     </ValidationMessage>
-                    <PrivacyPolicyCheck></PrivacyPolicyCheck>
+                    <PrivacyPolicyCheck onChange={e => setIsAccepted(e.target.value)}></PrivacyPolicyCheck>
                     <ButtonsSection href="/success" onClick={handleSubmit}></ButtonsSection>
                 </form>
             </FormCard>
@@ -85,4 +107,4 @@ const RegistrationPersonalData = () => {
     )
 }
 
-export default RegistrationPersonalData;
+export default PersonalData;
