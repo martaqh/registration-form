@@ -3,4 +3,8 @@
 .message__success {
     font-family: $font-form;
     text-align: center;
+
+    span {
+        font-weight: bold;
+    }
 }
