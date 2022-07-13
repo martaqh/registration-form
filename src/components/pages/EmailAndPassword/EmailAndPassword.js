@@ -8,7 +8,6 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserData } from '../../../redux/userDataRedux';
 import { useNavigate } from 'react-router';
-//import clsx from 'clsx';
 
 
 const EmailAndPassword = () => {
@@ -28,19 +27,15 @@ const EmailAndPassword = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (email.length <=0) {
-            //alert("You have to provide your email");
             setNoEmail(true);
             console.log(noEmail)
         } else if (password.length <=0) {
-            //alert("You have to provide your password");
             setNoPassword(true);
             console.log(noPassword)
         } else {
             dispatch(addUserData(userLoginData));
             setEmail('');
             setPassword('');
-            //setNoEmail(false);
-            //setNoPassword(false);
             navigate("/registration-final");
         } 
     }
