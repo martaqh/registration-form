@@ -6,7 +6,7 @@ const ButtonsSection = props => {
     return (
         <div className={styles.buttonsSection}>
             <ButtonSecondary>Log in instead</ButtonSecondary>
-            <ButtonPrimary href={props.href}>Next step</ButtonPrimary>
+            <ButtonPrimary href={props.href} onClick={props.onClick}>Next step</ButtonPrimary>
         </div>
     )
 }

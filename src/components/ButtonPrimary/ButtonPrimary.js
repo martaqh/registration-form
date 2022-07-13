@@ -4,8 +4,9 @@ const ButtonPrimary = props => {
     return (
         <a type={props.type}
            className={styles.buttonPrimary}
-           href={props.href}>
-        
+           href={props.href}
+           onClick={props.onClick}
+        >
            {props.children}
         </a>
         
