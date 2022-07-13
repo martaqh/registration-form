@@ -1,9 +1,10 @@
 import styles from './Message.module.scss';
 
 const Message = props => {
+    console.log(props.userEmail)
     return (
         <div className={styles.message__success}>
-                <p >We have sent you an email to <span>{props.email}</span>.</p>
+                <p >We have sent you an email to <span>{props.userEmail}</span>.</p>
                 <p>Make sure to click the link from the message to activate your account. </p>
             </div>
     )
