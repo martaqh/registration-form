@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserData } from '../../../redux/userDataRedux';
 import { useNavigate } from 'react-router';
+//import clsx from 'clsx';
 
 
 const EmailAndPassword = () => {
@@ -34,6 +35,7 @@ const EmailAndPassword = () => {
         
     }
     console.log(email, password);
+
     return (
         <main>
             <PageTitle>Ahoy you!</PageTitle>
@@ -54,9 +56,21 @@ const EmailAndPassword = () => {
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
-                    <ValidationMessage className="valid">At least 8 characters</ValidationMessage>
-                    <ValidationMessage>At least one letter</ValidationMessage>
-                    <ValidationMessage>At least one digit</ValidationMessage>
+                    <ValidationMessage
+                        className={password.length >= 8 ? "valid" : null}
+                    >
+                        At least 8 characters
+                    </ValidationMessage>
+                    <ValidationMessage
+                        className={/[a-zA-Z]/.test(password) ? "valid" : null}
+                    >
+                        At least one letter
+                    </ValidationMessage>
+                    <ValidationMessage
+                        className={/\(|\)|\d{1}/.test(password) ? "valid" : null}
+                    >
+                        At least one digit
+                    </ValidationMessage>
                     <ButtonsSection href="/registration-final" onClick={handleSubmit}/>
                 </form>   
             </FormCard>
