@@ -1,4 +1,17 @@
-input {
-    color: black;
-    border: black;
+@import '../../styles/settings.scss';
+
+.privacyPolicyCheck {
+
+    margin: 24px 0;
+    font-size: 16px;
+    font-family: $font-form;
+    
+    label {
+        margin-left: 10px;
+
+        a {
+            color: inherit;
+        }
+    }
+    
 }
