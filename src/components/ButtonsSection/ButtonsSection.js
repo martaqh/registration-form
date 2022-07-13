@@ -5,7 +5,7 @@ import styles from './ButtonsSection.module.scss';
 const ButtonsSection = props => {
     return (
         <div className={styles.buttonsSection}>
-            <ButtonSecondary>Log in instead</ButtonSecondary>
+            <ButtonSecondary href="#">Log in instead</ButtonSecondary>
             <ButtonPrimary href={props.href} onClick={props.onClick}>Next step</ButtonPrimary>
         </div>
     )
