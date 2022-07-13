@@ -28,11 +28,16 @@ const EmailAndPassword = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addUserData(userLoginData));
-        setEmail('');
-        setPassword('');
-        navigate("/registration-final");
-        
+        if (email.length <=0) {
+            alert("You have to provide your email");
+        } else if (password.length <=0) {
+            alert("You have to provide your password");
+        } else {
+            dispatch(addUserData(userLoginData));
+            setEmail('');
+            setPassword('');
+            navigate("/registration-final");
+        } 
     }
     console.log(email, password);
 
@@ -57,7 +62,7 @@ const EmailAndPassword = () => {
                         onChange={e => setPassword(e.target.value)}
                     />
                     <ValidationMessage
-                        className={password.length >= 8 ? "valid" : null}
+                        className={password.length <= 0 ? null : (password.length >= 8 ? "valid" : "notValid")}
                     >
                         At least 8 characters
                     </ValidationMessage>
