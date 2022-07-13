@@ -16,7 +16,7 @@ const InputField = props => {
             <label>{props.label}</label>
             <input className={props.className}
                    type={props.type}
-                   placeholder={props.className === "notValid" ? `Please enter your ${props.type}` : props.placeholder}
+                   placeholder={props.className === "notValid" ? `Please enter your ${props.label.toLowerCase()}` : props.placeholder}
                    value={props.value}
                    onClick={handleClick}
                    onChange={props.onChange}  
