@@ -12,11 +12,10 @@ import { useNavigate } from 'react-router';
 
 
 const EmailAndPassword = () => {
-
-    
-    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [noEmail, setNoEmail] = useState(false);
+    const [noPassword, setNoPassword] = useState(false);
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -29,13 +28,19 @@ const EmailAndPassword = () => {
     const handleSubmit = e => {
         e.preventDefault();
         if (email.length <=0) {
-            alert("You have to provide your email");
+            //alert("You have to provide your email");
+            setNoEmail(true);
+            console.log(noEmail)
         } else if (password.length <=0) {
-            alert("You have to provide your password");
+            //alert("You have to provide your password");
+            setNoPassword(true);
+            console.log(noPassword)
         } else {
             dispatch(addUserData(userLoginData));
             setEmail('');
             setPassword('');
+            //setNoEmail(false);
+            //setNoPassword(false);
             navigate("/registration-final");
         } 
     }
@@ -51,6 +56,7 @@ const EmailAndPassword = () => {
                         label="E-mail"
                         type="email"
                         placeholder="Something ending with monterail.com"
+                        className={noEmail ? "notValid" : null}
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
@@ -58,6 +64,7 @@ const EmailAndPassword = () => {
                         label="Password"
                         type="password"
                         placeholder="Enter your password"
+                        className={noPassword ? "notValid" : null}
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />

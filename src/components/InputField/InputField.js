@@ -1,15 +1,25 @@
-import styles from './InputField.module.scss'
+import styles from './InputField.module.scss';
+import { useState } from 'react';
 
 const InputField = props => {
+    const [isFocused, setIsFocused] = useState(false);
+    const handleClick = e => {
+        setIsFocused(true);
+        e.currentTarget.classList.remove('notValid');
+    }
+
+    console.log(isFocused)
+
+    console.log(props.className)
     return (
         <div className={styles.inputField}>
             <label>{props.label}</label>
-            <input type={props.type}
-                   placeholder={props.placeholder}
+            <input className={props.className}
+                   type={props.type}
+                   placeholder={props.className === "notValid" ? `Please enter your ${props.type}` : props.placeholder}
                    value={props.value}
-                   onChange={props.onChange}
-                   required
-                   
+                   onClick={handleClick}
+                   onChange={props.onChange}  
             />
         </div>
        
