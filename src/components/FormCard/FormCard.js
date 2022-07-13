@@ -3,10 +3,11 @@ import styles from './FormCard.module.scss';
 
 
 const FormCard = props => {
+    
     return (
-        <form className={styles.formCard} onSumbit={props.onSumbit}>
+        <div className={styles.formCard}>
             {props.children}
-        </form>
+        </div>
     )
 }
 
