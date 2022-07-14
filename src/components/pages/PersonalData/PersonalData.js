@@ -5,7 +5,6 @@ import InputField from "../../common/InputField/InputField";
 import ValidationMessage from "../../common/ValidationMessage/ValidationMessage";
 import ButtonsSection from '../../common/ButtonsSection/ButtonsSection';
 import CheckboxAccept from "../../common/CheckboxAccept/CheckboxAccept";
-import Container from "../../common/Container/Container";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserData } from '../../../redux/userDataRedux';
@@ -29,8 +28,6 @@ const PersonalData = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    console.log(birthDate)
-
     const userPersonalData = {
         firstName: firstName,
         lastName: lastName,
@@ -44,23 +41,17 @@ const PersonalData = () => {
     const year = ageInDateFormat.getUTCFullYear();
     const age = Math.abs(year - 1970);
 
-    console.log('age:', age)
-
     const handleSubmit = e => {
         e.preventDefault();
         if (firstName.length <=0) {
             setNoFisrName(true);
-            console.log(noFisrtName);
         } else if (lastName.length <=0) {
             setNoLastName(true);
-            console.log(noLastName);
         } else if (birthDate === undefined) {
             setNoBirthDate(true);
-            console.log(noBirthDate);
         } else if (isAccepted === false) {
             alert("Please accept our Privacy Policy")
         } else {
-
             dispatch(addUserData(userPersonalData));
             setFirstName('');
             setLastName('');

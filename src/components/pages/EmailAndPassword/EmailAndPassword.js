@@ -34,10 +34,8 @@ const EmailAndPassword = () => {
         e.preventDefault();
         if (email.length <=0) {
             setNoEmail(true);
-            console.log(noEmail)
         } else if (password.length <=0) {
             setNoPassword(true);
-            console.log(noPassword)
         } else {
             dispatch(addUserData(userLoginData));
             setEmail('');
@@ -45,7 +43,6 @@ const EmailAndPassword = () => {
             navigate("/registration-final");
         } 
     }
-    console.log(email, password);
 
     return (
         <main>

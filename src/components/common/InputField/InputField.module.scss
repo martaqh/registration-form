@@ -59,8 +59,7 @@
         color: $color-brand;
         background-color: $color-label;  
     }
-
-    
+   
 }
 
 .visibilityToggle {
@@ -77,18 +76,11 @@
         cursor: pointer;
     }
 
-
     &[category="password"] {
         visibility: visible;     
     }
 
     @media only screen and (max-width: 480px) {
         left: 85%;
-    }
-
-    
-}
-
-button .clicked {
-    color: $color-success;
+    }    
 }

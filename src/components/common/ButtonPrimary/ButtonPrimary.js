@@ -8,9 +8,7 @@ const ButtonPrimary = props => {
            onClick={props.onClick}
         >
            {props.children}
-        </a>
-        
-        
+        </a>   
     )
 }
 

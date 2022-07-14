@@ -1,5 +1,4 @@
 import styles from './InputField.module.scss';
-//import eye from '../../images/eye.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useState } from 'react';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
@@ -14,8 +13,6 @@ const InputField = props => {
     }
 
     console.log(isFocused)
-
-    console.log(props.className)
     
     const toggleVisibility = e => {
         e.preventDefault();
@@ -31,14 +28,15 @@ const InputField = props => {
             <label>{props.label}</label>
             <input className={props.className}
                    type={props.type}
-                   placeholder={props.className === "notValid" ? `Please enter your ${props.label.toLowerCase()}` : props.placeholder}
+                   placeholder={props.className === "notValid" ?
+                   `Please enter your ${props.label.toLowerCase()}` : props.placeholder}
                    value={props.value}
                    id={props.type}
                    onClick={handleClick}
                    onChange={props.onChange}  
             />
             <button className={styles.visibilityToggle} category={props.type} onClick={toggleVisibility} >
-                {!eyeClicked?
+                {!eyeClicked ?
                  <FontAwesomeIcon icon={faEye} /> : <FontAwesomeIcon icon={faEyeSlash} />
                 }
             </button>

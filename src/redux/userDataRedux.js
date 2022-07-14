@@ -16,7 +16,6 @@ export const addUserData = payload => ({ type: ADD_USER_DATA, payload });
 const userDataReducer = (statePart = {}, action) => {
   switch (action.type) {
     case ADD_USER_DATA:
-      console.log(action.payload)
       return {...statePart, ...action.payload};
     default:
       return statePart;

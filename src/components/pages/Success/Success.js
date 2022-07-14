@@ -13,8 +13,6 @@ const Success = props => {
 
     const firstName = useSelector(state => getFirstName(state));
     const email = useSelector(state => getEmail(state));
-    console.log(firstName);
-    console.log(email)
 
     return (
         <main>
