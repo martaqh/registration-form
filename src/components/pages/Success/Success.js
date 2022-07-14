@@ -1,6 +1,6 @@
-import ButtonPrimary from "../../ButtonPrimary/ButtonPrimary";
-import Message from "../../Message/Message";
-import PageTitle from "../../PageTitle/PageTitle";
+import ButtonPrimary from "../../common/ButtonsSection/ButtonsSection";
+import Message from "../../views/Message/Message";
+import PageTitle from "../../common/PageTitle/PageTitle";
 import { getEmail, getFirstName } from "../../../redux/userDataRedux";
 import { useSelector } from "react-redux";
 

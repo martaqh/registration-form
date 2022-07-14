@@ -1,5 +1,5 @@
-import ButtonPrimary from "../ButtonPrimary/ButtonPrimary";
-import ButtonSecondary from "../ButtonSecondary/ButtonSecondary";
+import ButtonPrimary from '../ButtonPrimary/ButtonPrimary'
+import ButtonSecondary from '../ButtonSecondary/ButtonSecondary';
 import styles from './ButtonsSection.module.scss';
 
 const ButtonsSection = props => {

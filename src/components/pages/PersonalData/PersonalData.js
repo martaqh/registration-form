@@ -1,15 +1,15 @@
-import PageTitle from "../../PageTitle/PageTitle";
-import PageSubtitle from "../../PageSubtitle/PageSubtitle";
-import FormCard from "../../FormCard/FormCard";
-import InputField from "../../InputField/InputField";
-import ValidationMessage from "../../ValidationMessage/ValidationMessage";
-import ButtonsSection from "../../ButtonsSection/ButtonsSection";
+import PageTitle from "../../common/PageTitle/PageTitle";
+import PageSubtitle from "../../common/PageSubtitle/PageSubtitle";
+import FormCard from "../../views/FormCard/FormCard";
+import InputField from "../../features/InputField/InputField";
+import ValidationMessage from "../../common/ValidationMessage/ValidationMessage";
+import ButtonsSection from '../../common/ButtonsSection/ButtonsSection';
 //import Checkbox from "../../Checkbox/Checkbox";
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserData } from '../../../redux/userDataRedux';
 import { useNavigate } from 'react-router';
-import PrivacyPolicyCheck from "../../PrivacyPolicyCheck/PrivacyPolicyCheck";
+import PrivacyPolicyCheck from "../../common/PrivacyPolicyCheck/PrivacyPolicyCheck";
 
 const PersonalData = () => {
 
