@@ -1,4 +1,4 @@
-import ButtonPrimary from "../../common/ButtonsSection/ButtonsSection";
+import ButtonPrimary from "../../common/ButtonPrimary/ButtonPrimary";
 import Message from "../../views/Message/Message";
 import PageTitle from "../../common/PageTitle/PageTitle";
 import { getEmail, getFirstName } from "../../../redux/userDataRedux";
