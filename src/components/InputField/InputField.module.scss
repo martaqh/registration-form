@@ -3,6 +3,7 @@
 .inputField {
     display: flex;
     flex-direction: column;
+    position: relative; 
 
     label {
         font-family: $font-main;
@@ -58,5 +59,35 @@
         color: $color-brand;
         background-color: $color-label;  
     }
+
+    
 }
 
+.visibilityToggle {
+    
+    visibility: hidden;
+    position: absolute;
+    left: 83%;
+    top: 57%;
+    border:none;
+    background-color: inherit;
+    color: $color-light;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+  //  &:focus {
+  //      color: $color-success;
+   // }
+
+    &[category="password"] {
+        visibility: visible;     
+    }
+
+    
+}
+
+button .clicked {
+    color: $color-success;
+}
