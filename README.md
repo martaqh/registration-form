@@ -1,3 +1,24 @@
+Reccomended installations before running the app:
+
+```
+npm install yarn
+yarn add react-router
+yarn add react-router-dom
+yarn add react-redux
+yarn add sass
+yarn add @fortawesome/fontawesome-svg-core
+yarn add @fortawesome/free-solid-svg-icons
+yarn add @fortawesome/react-fontawesome
+```
+
+Then you can run the app with:
+
+```
+yarn start
+```
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
