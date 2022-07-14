@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.checkboxAccept {
+
+    margin: 24px 0;
+    font-size: 16px;
+    font-family: $font-form;
+    
+    label {
+        margin-left: 10px;
+
+        a {
+            color: inherit;
+        }
+    }
+    
+}
