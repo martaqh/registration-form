@@ -1,16 +1,22 @@
 import PageTitle from '../../common/PageTitle/PageTitle';
 import PageSubtitle from "../../common/PageSubtitle/PageSubtitle";
 import FormCard from "../../views/FormCard/FormCard";
-import InputField from '../../features/InputField/InputField';
+import InputField from '../../common/InputField/InputField';
 import ValidationMessage from '../../common/ValidationMessage/ValidationMessage';
 import ButtonsSection from '../../common/ButtonsSection/ButtonsSection';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addUserData } from '../../../redux/userDataRedux';
 import { useNavigate } from 'react-router';
+import { useEffect } from "react";
 
 
 const EmailAndPassword = () => {
+
+    useEffect(() => {
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [noEmail, setNoEmail] = useState(false);
