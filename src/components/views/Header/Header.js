@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import logo from '../../images/logo.svg';
+import logo from '../../../images/logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
